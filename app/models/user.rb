@@ -6,6 +6,5 @@ class User < ApplicationRecord
   # how to create one validates record for many fields?
   validates :first_name, length: { minimum: 2}
   validates :last_name, length: { minimum: 2 }
-  validates :email, uniqueness: { case_sensitive: false }, 
-    format: { with: /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i, multiline: true }
+  validates :email, uniqueness: { case_sensitive: false }, format: { with: /\A\S+@.+\.\S+\z/ }
 end
